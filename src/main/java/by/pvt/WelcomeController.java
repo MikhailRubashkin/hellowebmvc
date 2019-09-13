@@ -16,5 +16,4 @@ public class WelcomeController {
                            "Java Developer");
         return "welcome";
     }
-
 }
