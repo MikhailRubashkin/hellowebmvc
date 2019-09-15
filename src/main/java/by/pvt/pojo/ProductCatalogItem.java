@@ -7,38 +7,55 @@ public class ProductCatalogItem implements Serializable {
     private Long id;
     private String itemName;
     private Double price;
+    private byte[] productImage;
 
-    public ProductCatalogItem(){
-
+    public ProductCatalogItem() {
     }
 
-    public ProductCatalogItem ( Long id, String itemName, Double price ){
+    public ProductCatalogItem(Long id, String itemName, Double price) {
         this.id = id;
         this.itemName = itemName;
         this.price = price;
     }
 
-    public Long getId (){
+    public Long getId() {
         return id;
     }
 
-    public void setId ( Long id ){
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public String getItemName (){
+    public String getItemName() {
         return itemName;
     }
 
-    public void setItemName ( String itemName ){
+    public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
-    public Double getPrice (){
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice ( Double price ){
+    public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public byte[] getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(byte[] productImage) {
+        this.productImage = productImage;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductCatalogItem{" +
+               "id=" + id +
+               ", itemName='" + itemName + '\'' +
+               ", price=" + price +
+               '}';
     }
 }

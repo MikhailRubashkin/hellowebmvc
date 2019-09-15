@@ -23,5 +23,6 @@ public class HelloWebMvcInitializer implements ServletContainerInitializer {
                 ctx.addServlet("dispatcherServlet", dispatcherServlet);
         registration.setLoadOnStartup(1);
         registration.addMapping("/");
+
     }
 }

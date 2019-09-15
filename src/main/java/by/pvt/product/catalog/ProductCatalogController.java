@@ -1,4 +1,4 @@
-package by.pvt.catalog;
+package by.pvt.product.catalog;
 
 import by.pvt.pojo.ProductCatalogItem;
 import by.pvt.service.ProductCatalogService;
@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.logging.Logger;
 
@@ -34,6 +35,12 @@ public class ProductCatalogController {
         ProductCatalogItem item = productCatalogService.findItem(id);
         model.addAttribute("item", item);
         return "productCatalogItem";
+    }
+
+    @GetMapping("/item/{id}/image")
+    public @ResponseBody
+    byte[] productItemImage(@PathVariable Long id) {
+        return productCatalogService.findItem(id).getProductImage();
     }
 
 }

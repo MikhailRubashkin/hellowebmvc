@@ -15,7 +15,7 @@
         <a class="nav-link" href="${pageContext.request.contextPath}/product-catalog">Product Catalog</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="${pageContext.request.contextPath}/payment-and-delivery">Payment and Delivery</a>
+        <a class="nav-link" href="${pageContext.request.contextPath}/add-product">Add Product</a>
     </li>
     <li class="nav-item">
         <a class="nav-link disabled" href="my-orders" tabindex="-1" aria-disabled="true">My orders</a>
