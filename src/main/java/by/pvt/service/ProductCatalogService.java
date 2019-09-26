@@ -14,7 +14,7 @@ public class ProductCatalogService {
     ProductCatalogRepository productCatalogRepository;
 
     public List<ProductCatalogItem> getFirstTopTenProducts() {
-        return productCatalogRepository.findAll(10);
+        return productCatalogRepository.findAll(100);
     }
 
 
