@@ -7,6 +7,8 @@
 </head>
 <body>
 
+
+
 <ul class="nav">
     <li class="nav-item">
         <a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a>
@@ -21,7 +23,9 @@
         <a class="nav-link disabled" href="my-orders" tabindex="-1" aria-disabled="true">My orders</a>
     </li>
 </ul>
+
 <form class="form-inline my-2 my-lg-0" action="${pageContext.request.contextPath}/search">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search-str">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 </form>
+

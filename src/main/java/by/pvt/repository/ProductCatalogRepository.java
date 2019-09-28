@@ -28,7 +28,7 @@ public class ProductCatalogRepository {
     public List<ProductCatalogItem> findByProductName ( String str, int count ){
         return sessionFactory.getCurrentSession ( )
                 .createQuery ("from ProductCatalogItem where itemName like :serchStr", ProductCatalogItem.class)
-                .setParameter ("serch", "%"+str+"%")
+                .setParameter ("serchStr", "%"+str+"%")
                 .setMaxResults (count)
                 .list ( );
 
