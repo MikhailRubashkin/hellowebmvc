@@ -24,7 +24,7 @@ public class UserService {
     @Autowired
     AppUserRepository userRepository;
 
-    @Autowired
+    
     PasswordEncoder passwordEncoder;
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
