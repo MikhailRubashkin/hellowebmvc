@@ -16,8 +16,10 @@ public class AppUser {
     private String lastName;
     private String email;
     private String password;
-    @OneToMany
+    @ManyToMany
     private Set<AppRole> appRoles;
+
+    public AppUser(){}
 
     public AppUser ( String firstName, String lastName, String email, String password, Set<AppRole> appRoles ){
         this.firstName = firstName;
@@ -73,5 +75,43 @@ public class AppUser {
 
     public void setAppRoles ( Set<AppRole> appRoles ){
         this.appRoles = appRoles;
+    }
+
+    @Override
+    public boolean equals ( Object o ){
+        if (this == o) return true;
+        if (o == null || getClass ( ) != o.getClass ( )) return false;
+
+        AppUser appUser = (AppUser) o;
+
+        if (id != null ? !id.equals (appUser.id) : appUser.id != null) return false;
+        if (firstName != null ? !firstName.equals (appUser.firstName) : appUser.firstName != null) return false;
+        if (lastName != null ? !lastName.equals (appUser.lastName) : appUser.lastName != null) return false;
+        if (email != null ? !email.equals (appUser.email) : appUser.email != null) return false;
+        if (password != null ? !password.equals (appUser.password) : appUser.password != null) return false;
+        return appRoles != null ? appRoles.equals (appUser.appRoles) : appUser.appRoles == null;
+    }
+
+    @Override
+    public int hashCode (){
+        int result = id != null ? id.hashCode ( ) : 0;
+        result = 31 * result+(firstName != null ? firstName.hashCode ( ) : 0);
+        result = 31 * result+(lastName != null ? lastName.hashCode ( ) : 0);
+        result = 31 * result+(email != null ? email.hashCode ( ) : 0);
+        result = 31 * result+(password != null ? password.hashCode ( ) : 0);
+        result = 31 * result+(appRoles != null ? appRoles.hashCode ( ) : 0);
+        return result;
+    }
+
+    @Override
+    public String toString (){
+        return "AppUser{"+
+               "id="+id+
+               ", firstName='"+firstName+'\''+
+               ", lastName='"+lastName+'\''+
+               ", email='"+email+'\''+
+               ", password='"+password+'\''+
+               ", appRoles="+appRoles+
+               '}';
     }
 }

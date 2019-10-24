@@ -18,7 +18,7 @@ public class AppRoleRepository {
 
     public AppRole findByRoleName(RoleName roleName) {
         return sessionFactory.getCurrentSession()
-                .createQuery("from AppRole where roleName like :param1", AppRole.class)
+                .createQuery(" from  AppRole where roleName like :param1", AppRole.class)
                 .setParameter("param1", roleName)
                 .getSingleResult();
     }

@@ -24,11 +24,12 @@ public class UserService {
     @Autowired
     AppUserRepository userRepository;
 
-    
+    @Autowired
     PasswordEncoder passwordEncoder;
 
     @Transactional(Transactional.TxType.REQUIRES_NEW)
     public boolean saveUser(AppUser user) {
+        log.info("Saving user=" + user);
         if (user == null || user.getFirstName().isEmpty() || user.getLastName().isEmpty() ||
             user.getEmail().isEmpty() || user.getPassword().isEmpty() ||
             userRepository.findUserByEmail(user.getEmail()) != null) {
