@@ -10,7 +10,7 @@
 
 <ul class="nav">
     <li class="nav-item">
-        <a class="nav-link active" href="${pageContext.request.contextPath}/home">Home</a>
+        <a class="nav-link active" href="${pageContext.request.contextPath} /hellowebmvc_war/home">Home</a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/product-catalog">Product Catalog</a>

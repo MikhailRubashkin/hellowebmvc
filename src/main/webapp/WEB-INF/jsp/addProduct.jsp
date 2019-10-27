@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:include page="header.jsp"/>
 
 <form method="POST" action="${pageContext.request.contextPath}/add-product" enctype="multipart/form-data">
@@ -6,6 +6,10 @@
         <label for="exampleInputEmail1">Product name</label>
         <input type="text" name="itemName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product name">
         <small id="emailHelp" class="form-text text-muted">Please describe product item</small>
+        <div>
+            <form:errors path ="ItemName"/>
+        </div>
+
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Price</label>
