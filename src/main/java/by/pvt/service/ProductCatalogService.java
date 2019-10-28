@@ -32,7 +32,7 @@ public class ProductCatalogService {
     @Transactional
     public boolean addItem(ProductCatalogItem item) {
         if (item.getPrice() == null || item.getPrice() <= 0 ||
-                item.getItemName() == null || item.getItemName().isEmpty()) {
+            item.getItemName() == null || item.getItemName().isEmpty()) {
             return false;
         }
         /*if (item.getId() == null) {

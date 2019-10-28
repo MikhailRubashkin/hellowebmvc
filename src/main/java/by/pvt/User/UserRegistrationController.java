@@ -24,10 +24,7 @@ public class UserRegistrationController {
     }
 
     @PostMapping
-    public String registerForm(
-            @ModelAttribute AppUser appUser,
-            BindingResult bindingResult
-    ) {
+    public String registerForm(@ModelAttribute AppUser appUser, BindingResult bindingResult) {
         if (userService.saveUser(appUser)) {
             return "redirect:/login";
         } else {
